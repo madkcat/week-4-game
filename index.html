@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Star Wars: RPG</title>
+
+  <!-- Bootstrap File -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Overall Bootstrap Grid -->
+  <div class="container">
+
+    <!-- Jumbotron with Title -->
+    <!-- <div class="jumbotron">
+              <h1 class="text-center"><strong>Star Wars: The RPG!</strong></h1>
+              <h4 class="text-center">Rated M for Mature</h4>
+              <hr>
+              <div class="text-center"> // insert music at some point
+                <button class="btn btn-warning btn-xs theme-button"><span class="glyphicon glyphicon-music"></span> Play Theme!</button>
+                <button class="btn btn-default btn-xs pause-button"><span class="glyphicon glyphicon-pause"></span> Pause Song</button>
+              </div>
+        
+            </div>
+            <div class="row"> -->
+
+    <!-- Left Panel -->
+    <div class="col-lg-12">
+
+      <!-- (Character Select))-->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Choose your Character - Good Vs Evil!</h3>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button class="btn btn-default btn-lg obi-button" id="obi">
+              Obi-Wan
+              <br>
+              <image src="assets/images/obi.jpg" width="100px"></image>
+              <br>
+              <div class="obihp">100hp</div>
+            </button>
+            <button class="btn btn-default btn-lg luke-button" id="luke">
+              Luke Skywalker
+              <br>
+              <image src="assets/images/luke.jpg" width="100px"></image>
+              <br>
+              <div class="lukehp">125hp</div>
+            </button>
+            <button class="btn btn-default btn-lg darth-button" id="darth">
+              Darth Sidious
+              <br>
+              <image src="assets/images/darth.jpg" width="100px"></image>
+              <br>
+              <div class="darthhp">150hp</div>
+            </button>
+            <button class="btn btn-default btn-lg maul-button" id="maul">
+              Darth Maul
+              <br>
+              <image src="assets/images/maul.jpg" width="100px"></image>
+              <div class="maulhp">200hp</div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- (Villain Select)) -->
+      <div class="panel panel-default" id="villains">
+        <div class="panel-heading">
+          <h3 class="panel-title">Choose your Villain - Villain Select</h3>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button class="btn btn-danger btn-lg obi-button" id="badobi">
+              Obi-Wan
+              <br>
+              <image src="assets/images/obi.jpg" width="100px"></image>
+              <br>
+              <div class="obihp">100hp</div>
+            </button>
+            <button class="btn btn-danger btn-lg luke-button" id="badluke">
+              Luke Skywalker
+              <br>
+              <image src="assets/images/luke.jpg" width="100px"></image>
+              <br>
+              <div class="lukehp">125hp</div>
+            </button>
+            <button class="btn btn-danger btn-lg darth-button" id="baddarth">
+              Darth Sidious
+              <br>
+              <image src="assets/images/darth.jpg" width="100px"></image>
+              <br>
+              <div class="darthhp">150hp</div>
+            </button>
+            <button class="btn btn-danger btn-lg maul-button" id="badmaul">
+              Darth Maul
+              <br>
+              <image src="assets/images/maul.jpg" width="100px"></image>
+              <div class="maulhp">200hp</div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls (Superpower Move Controls) -->
+      <div class="panel panel-default" id="battlefieldthing">
+        <div class="panel-heading">
+          <h3 class="panel-title">Battlefield</h3>
+        </div>
+        <br>
+        <div class="text-center" id="en">
+          <button class="btn btn-default btn-lg attack-button" id="attack">
+            <span class="glyphicon glyphicon-comment"></span> Attack!</button>
+          <br>
+          <button class="btn btn-danger btn-lg obi-button" id="enobi">
+            Obi-Wan
+            <br>
+            <image src="assets/images/obi.jpg" width="100px"></image>
+            <br>
+            <div class="obihp">100hp</div>
+          </button>
+          <button class="btn btn-danger btn-lg luke-button" id="enluke">
+            Luke Skywalker
+            <br>
+            <image src="assets/images/luke.jpg" width="100px"></image>
+            <br>
+            <div class="lukehp">125hp</div>
+          </button>
+          <button class="btn btn-danger btn-lg darth-button" id="endarth">
+            Darth Sidious
+            <br>
+            <image src="assets/images/darth.jpg" width="100px"></image>
+            <br>
+            <div class="darthhp">150hp</div>
+          </button>
+          <button class="btn btn-danger btn-lg maul-button" id="enmaul">
+            Darth Maul
+            <br>
+            <image src="assets/images/maul.jpg" width="100px"></image>
+            <div class="maulhp">200hp</div>
+          </button>
+        </div>
+      </div>
+      <!-- Victory -->
+      <div class="panel panel-default" id="VICTORY">
+        <div class="panel-heading">
+          <h3 class="panel-title">VICTORY</h3>
+        </div>
+      </div>
+      <!-- Defeat -->
+      <div class="panel panel-default" id="DEFEAT">
+        <div class="panel-heading">
+          <h3 class="panel-title">Defeat</h3>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-default btn-lg reset-button" id="reset">
+          <span class="glyphicon glyphicon-comment"></span> Reset!</button>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+  <script>
+
+    // JavaScript function that wraps everything
+    var hero = {
+      class: "",
+      hp: 0,
+      atk: 0,
+      lvl: 0
+    }
+    var villain = {
+      class: "",
+      hp: 0,
+      def: 0
+    }
+    var obi = {
+      hp: 145,
+      atk: 20,
+      def: 24,
+      state: true
+    }
+    var luke = {
+      hp: 160,
+      atk: 19,
+      def: 23,
+      state: true
+    }
+    var darth = {
+      hp: 170,
+      atk: 18,
+      def: 35,
+      state: true
+    }
+    var maul = {
+      hp: 175,
+      atk: 17,
+      def: 40,
+      state: true
+    }
+    $(document).ready(function () {
+      $("#villains").hide()
+      $("#VICTORY").hide()
+      $("#DEFEAT").hide()
+      $("#battlefieldthing").hide()
+      $("#enobi").hide()
+      $("#enluke").hide()
+      $("#endarth").hide()
+      $("#enmaul").hide()
+      $('.obihp').html(obi.hp + "hp")
+      $('.lukehp').html(luke.hp + "hp")
+      $('.darthhp').html(darth.hp + "hp")
+      $('.maulhp').html(maul.hp + "hp")
+
+      
+      //   // Gets Link for Theme Song
+      //   var audioElement = document.createElement("audio");
+      //   audioElement.setAttribute("src", "Assets/empty");
+
+      //   // Theme Button
+      //   $(".theme-button").on("click", function() {
+      //     audioElement.play();
+      //   });
+
+      //   $(".pause-button").on("click", function() {
+      //     audioElement.pause();
+      //   });
+
+      // Character Select Button
+      $("#obi").on("click", function () {
+        $("#luke").hide()
+        $("#darth").hide()
+        $("#maul").hide()
+        $("#badobi").hide()
+        $("#villains").show()
+        hero.hp = obi.hp;
+        hero.lvl = obi.atk;
+        hero.atk = obi.atk;
+        hero.class = ".obihp";
+        obi.state = false;
+      });
+
+      $("#luke").on("click", function () {
+        $("#obi").hide()
+        $("#darth").hide()
+        $("#maul").hide()
+        $("#badluke").hide()
+        $("#villains").show()
+        hero.hp = luke.hp;
+        hero.lvl = luke.atk;
+        hero.atk = luke.atk;
+        hero.class = ".lukehp";
+        luke.state = false;
+      });
+
+      $("#darth").on("click", function () {
+        $("#obi").hide()
+        $("#luke").hide()
+        $("#maul").hide()
+        $("#baddarth").hide()
+        $("#villains").show()
+        hero.hp = darth.hp;
+        hero.lvl = darth.atk;
+        hero.atk = darth.atk;
+        hero.class = ".darthhp";
+        darth.state = false;
+      });
+
+      $("#maul").on("click", function () {
+        $("#obi").hide()
+        $("#luke").hide()
+        $("#darth").hide()
+        $("#badmaul").hide()
+        $("#villains").show()
+        hero.hp = maul.hp;
+        hero.lvl = maul.atk;
+        hero.atk = maul.atk;
+        hero.class = ".maulhp";
+        maul.state = false;
+      });
+
+      // Villain Select
+      $("#badobi").on("click", function () {
+        $("#battlefieldthing").show()
+        $("#enobi").show()
+        $(this).hide()
+        $("#villains").hide()
+        villain.hp = obi.hp;
+        villain.def = obi.def;
+        villain.class = ".obihp";
+        villain.state = "#enobi"
+      });
+
+      $("#badluke").on("click", function () {
+        $("#battlefieldthing").show()
+        $("#enluke").show()
+        $(this).hide()
+        $("#villains").hide()
+        villain.hp = luke.hp;
+        villain.def = luke.def;
+        villain.class = ".lukehp";
+        villain.state = "#enluke"
+      });
+
+      $("#baddarth").on("click", function () {
+        $("#battlefieldthing").show()
+        $("#endarth").show()
+        $(this).hide()
+        $("#villains").hide()
+        villain.hp = darth.hp;
+        villain.def = darth.def;
+        villain.class = ".darthhp";
+        villain.state = "#endarth"
+      });
+
+      $("#badmaul").on("click", function () {
+        $("#battlefieldthing").show()
+        $("#enmaul").show()
+        $(this).hide()
+        $("#villains").hide()
+        villain.hp = maul.hp;
+        villain.def = maul.def;
+        villain.class = ".maulhp";
+        villain.state = "#enmaul";
+      });
+
+      // Attack Buttons
+      $("#attack").on("click", function () {
+        var herodamage = hero.hp - villain.def;
+        var villaindamage = villain.hp - hero.atk;
+        var levelup = hero.atk + hero.lvl;
+        if (villain.hp > 0) {
+          villain.hp = villaindamage;
+          if (villain.hp > 0) {
+            hero.hp = herodamage;
+            if (hero.hp < 1) {
+              $("#villains").hide()
+              $("#DEFEAT").show()
+            }
+          }
+          else {
+            $(villain.state).hide()
+            if (villain.state == "#enobi") {
+              obi.state = false;
+            }
+            if (villain.state == "#enluke") {
+              luke.state = false;
+            }
+            if (villain.state == "#endarth") {
+              darth.state = false;
+            }
+            if (villain.state == "#enmaul") {
+              maul.state = false;
+            }
+            $("#battlefieldthing").hide()
+            $("#villains").show()
+          }
+          hero.atk = levelup;
+          if (obi.state == false && luke.state == false && darth.state == false && maul.state == false) {
+            $("#villains").hide()
+            $("#VICTORY").show()
+          }
+
+        }
+        console.log("hero")
+        console.log(hero);
+        console.log("villain")
+        console.log(villain);
+        console.log("-----")
+        console.log(obi.state + " " + luke.state + " " + darth.state + " " + maul.state)
+        $(hero.class).html(hero.hp + "hp")
+        $(villain.class).html(villain.hp + "hp")
+        if (hero.hp < 1) {
+          $("#battlefieldthing").hide()
+          $("#villains").hide()
+          $("#DEFEAT").show()
+      }
+      });
+
+      $("#reset").on("click", function () {
+        $("#obi").show()
+        $("#luke").show()
+        $("#darth").show()
+        $("#maul").show()
+        $("#badobi").show()
+        $("#badluke").show()
+        $("#baddarth").show()
+        $("#badmaul").show()
+        $("#villains").hide()
+        $("#enobi").hide()
+        $("#enluke").hide()
+        $("#endarth").hide()
+        $("#enmaul").hide()
+        hero.hp = 0;
+        hero.atk = 0;
+        hero.class = "";
+        villain.class = "";
+        villain.hp = 0;
+        villain.def = 0;
+        $('.obihp').html(obi.hp + "hp")
+        $('.lukehp').html(luke.hp + "hp")
+        $('.darthhp').html(darth.hp + "hp")
+        $('.maulhp').html(maul.hp + "hp")
+        obi.state = true;
+        luke.state = true;
+        darth.state = true;
+        maul.state = true;
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>
